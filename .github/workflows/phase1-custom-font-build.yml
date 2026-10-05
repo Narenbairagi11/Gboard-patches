@@ -1,0 +1,48 @@
+name: Phase 1 Custom Font - Build Test
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - phase1-custom-font
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-test:
+    name: Build and Test
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Setup Java
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      - name: Cache Gradle
+        uses: burrunan/gradle-cache-action@v3
+
+      - name: Make Gradle wrapper executable
+        run: chmod +x ./gradlew
+
+      - name: Build Android patches
+        env:
+          GITHUB_ACTOR: ${{ github.repository_owner }}
+          GITHUB_TOKEN: ${{ secrets.MORPHE_PACKAGES_TOKEN }}
+        run: ./gradlew :patches:buildAndroid
+
+      - name: Run tests
+        env:
+          GITHUB_ACTOR: ${{ github.repository_owner }}
+          GITHUB_TOKEN: ${{ secrets.MORPHE_PACKAGES_TOKEN }}
+        run: ./gradlew :patches:test
