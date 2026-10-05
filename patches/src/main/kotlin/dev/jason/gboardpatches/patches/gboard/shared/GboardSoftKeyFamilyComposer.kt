@@ -94,6 +94,13 @@ internal enum class GboardSoftKeyFamilyFeature(
             RuntimeCallId.ZHUYIN_BOTTOM_ROW_WEIGHT_RUNTIME_AFTER_SOFT_KEY_BOUND,
         ),
     ),
+    CUSTOM_FONT(
+        beforeOrder = null,
+        afterOrder = 500,
+        afterRuntimeCalls = listOf(
+            RuntimeCallId.CUSTOM_FONT_RUNTIME_AFTER_SOFT_KEY_BOUND,
+        ),
+    ),
     ;
 
     val runtimeCalls: List<RuntimeCallId>
