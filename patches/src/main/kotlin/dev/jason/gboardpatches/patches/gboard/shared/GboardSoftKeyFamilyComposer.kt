@@ -361,6 +361,7 @@ internal fun GboardSoftKeyFamilyFeature.afterDelegate(): String = when (this) {
     GboardSoftKeyFamilyFeature.TOP_ROW_SWIPE,
     GboardSoftKeyFamilyFeature.ZHUYIN_BOTTOM_ROW,
     GboardSoftKeyFamilyFeature.ZHUYIN_TOGGLE,
+    GboardSoftKeyFamilyFeature.CUSTOM_FONT,
     -> emitSoftKeyRuntimeCall(afterRuntimeCalls.single(), "p0")
     else -> error("$this has no after-stock contribution")
 }
