@@ -37,6 +37,8 @@ import dev.jason.gboardpatches.patches.gboard.features.developeroptions.gboardDe
 import dev.jason.gboardpatches.patches.gboard.features.cursortrackpad.gboardCursorTrackpadFeatureMarkerPatch
 import dev.jason.gboardpatches.patches.gboard.features.cursortrackpad.gboardCursorTrackpadFlagValuePatch
 import dev.jason.gboardpatches.patches.gboard.features.customtheme.gboardCustomThemeAssetsPatch
+import dev.jason.gboardpatches.patches.gboard.features.customfont.gboardCustomFontAssetsPatch
+import dev.jason.gboardpatches.patches.gboard.features.customfont.gboardCustomFontSoftKeyPatch
 import dev.jason.gboardpatches.patches.gboard.features.customtheme.gboardCustomThemeFeatureMarkerPatch
 import dev.jason.gboardpatches.patches.gboard.features.customtheme.gboardCustomThemeManifestPatch
 import dev.jason.gboardpatches.patches.gboard.features.customtheme.gboardCustomThemeOfficialImportPatch
@@ -472,6 +474,22 @@ val gboardCustomThemePatch = gboardPublicResourcePatch(
 }
 
 @Suppress("unused")
+val gboardCustomFontPatch = gboardPublicResourcePatch(
+    featureId = "custom_font",
+    name = "Custom Font",
+    description = "Apply a bundled custom font to Gboard keyboard key labels.",
+    default = true,
+) {
+    compatibleWith(COMPATIBILITY_GBOARD)
+
+    dependsOn(
+        gboardPatchesExtensionCarrierPatch,
+        gboardCustomFontAssetsPatch,
+        gboardCustomFontSoftKeyPatch,
+    )
+}
+
+@Suppress("unused")
 val gboardQuickInsertPatch = gboardPublicResourcePatch(
     featureId = "quick_insert",
     name = "Quick Insert",
@@ -880,6 +898,7 @@ object GboardPublishedPatchCatalog {
         gboardCloseProactiveSuggestionsPatch,
         gboardFlowModeAnimationPatch,
         gboardCustomThemePatch,
+        gboardCustomFontPatch,
         gboardQuickInsertPatch,
         gboardZhuyinQuickTraditionalSimplifiedTogglePatch,
         gboardCustomSymbolsPatch,
