@@ -8,6 +8,8 @@ import dev.jason.gboardpatches.patches.gboard.features.addsymbols.gboardZhuyinCu
 import dev.jason.gboardpatches.patches.gboard.features.addsymbols.gboardZhuyinCustomSymbolsHistoryPatch
 import dev.jason.gboardpatches.patches.gboard.features.addsymbols.gboardZhuyinCustomSymbolsRecyclerPatch
 import dev.jason.gboardpatches.patches.gboard.features.addsymbols.gboardZhuyinCustomSymbolsRoutingPatch
+import dev.jason.gboardpatches.patches.gboard.features.customfont.gboardCustomFontAssetsPatch
+import dev.jason.gboardpatches.patches.gboard.features.customfont.gboardCustomFontSoftKeyPatch
 import dev.jason.gboardpatches.patches.gboard.features.advancedvoice.gboardAdvancedVoice1803ZhTwPatch
 import dev.jason.gboardpatches.patches.gboard.features.advancedvoice.gboardAdvancedVoiceFlagValuePatch
 import dev.jason.gboardpatches.patches.gboard.features.englishqwerty.gboardEnglishQwertyPointerPatch
@@ -49,6 +51,17 @@ internal object GboardContributionWiring {
                 arrayOf(
                     gboardAdvancedVoice1803ZhTwPatch,
                     gboardRambler1803OfficialSelectorPatch,
+                )
+            },
+        ),
+        "custom_font" to listOf(
+            unit(
+                "custom_font.assets",
+                "custom_font.soft_key",
+            ) {
+                arrayOf(
+                    gboardCustomFontAssetsPatch,
+                    gboardCustomFontSoftKeyPatch,
                 )
             },
         ),
