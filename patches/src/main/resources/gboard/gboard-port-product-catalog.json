@@ -1697,6 +1697,35 @@
           ]
         }
       ]
+    },
+    {
+      "feature_id": "custom_font",
+      "public_patch_name": "Custom Font",
+      "target_family_ids": [
+        "soft_key_bind"
+      ],
+      "migration_scope": "version-sensitive",
+      "consumer_files": [
+        "patches/src/main/kotlin/dev/jason/gboardpatches/patches/gboard/features/customfont/GboardCustomFontAssetsPatch.kt",
+        "patches/src/main/kotlin/dev/jason/gboardpatches/patches/gboard/features/customfont/GboardCustomFontSoftKeyPatch.kt",
+        "patches/src/main/kotlin/dev/jason/gboardpatches/patches/gboard/registry/GboardContributionWiring.kt",
+        "patches/src/main/kotlin/dev/jason/gboardpatches/patches/gboard/registry/GboardPatchRegistry.kt",
+        "patches/src/main/kotlin/dev/jason/gboardpatches/patches/gboard/shared/GboardSoftKeyFamilyComposer.kt"
+      ],
+      "contributions": [
+        {
+          "contribution_id": "custom_font.soft_key",
+          "anchor_family_id": "soft_key_bind",
+          "phase": "after_stock_result",
+          "order": 500,
+          "required_bindings": [
+            "soft_key_bind"
+          ],
+          "runtime_calls": [
+            "CUSTOM_FONT_RUNTIME_AFTER_SOFT_KEY_BOUND"
+          ]
+        }
+      ]
     }
   ]
 }
