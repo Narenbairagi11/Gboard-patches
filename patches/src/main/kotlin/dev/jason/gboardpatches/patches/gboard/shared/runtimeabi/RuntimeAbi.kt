@@ -123,6 +123,7 @@ internal enum class RuntimeCallId(internal val encodedAbi: String) {
     AI_WRITING_TOOLS_VOICE_COMMAND_RUNTIME_OBSERVE_GEN_AI_REFRESH_CLIENT_TYPE("Ldev/jason/gboardpatches/extension/writingtools/GboardAiWritingToolsVoiceCommandRuntime;->observeGenAiRefreshClientType(Ljava/lang/Object;Ljava/lang/Object;)V"),
     AI_WRITING_TOOLS_VOICE_COMMAND_RUNTIME_REMEMBER_GEN_AI_INIT_CALL("Ldev/jason/gboardpatches/extension/writingtools/GboardAiWritingToolsVoiceCommandRuntime;->rememberGenAiInitCall(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V"),
     ZHUYIN_BOTTOM_ROW_WEIGHT_RUNTIME_AFTER_SOFT_KEY_BOUND("Ldev/jason/gboardpatches/extension/zhuyinbottomrow/GboardZhuyinBottomRowWeightRuntime;->afterSoftKeyBound(Ljava/lang/Object;)V"),
+    CUSTOM_FONT_RUNTIME_AFTER_SOFT_KEY_BOUND("Ldev/jason/gboardpatches/extension/customfont/GboardCustomFontRuntime;->applyToSoftKey(Ljava/lang/Object;)V"),
     ZHUYIN_SLIDE_RUNTIME_CLEAR_POINTER_STATE("Ldev/jason/gboardpatches/extension/zhuyinslide/GboardZhuyinSlideRuntime;->clearPointerState(Ljava/lang/Object;)V"),
     ZHUYIN_SLIDE_RUNTIME_MAYBE_CAPTURE_AND_SHOULD_SUPPRESS_RETARGET("Ldev/jason/gboardpatches/extension/zhuyinslide/GboardZhuyinSlideRuntime;->maybeCaptureAndShouldSuppressRetarget(Ljava/lang/Object;Ljava/lang/Object;FF)Z"),
     ZHUYIN_SLIDE_RUNTIME_PATCH_INCOMING_SOFT_KEY_METADATA("Ldev/jason/gboardpatches/extension/zhuyinslide/GboardZhuyinSlideRuntime;->patchIncomingSoftKeyMetadata(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;"),
