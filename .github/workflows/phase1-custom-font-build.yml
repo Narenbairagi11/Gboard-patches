@@ -48,6 +48,8 @@ jobs:
           echo "MORPHE_PACKAGES_TOKEN is configured."
 
       - name: Triggered build after credentials update
+        run: echo "Phase 1 Custom Font retry"
+
         run: echo "Starting Phase 1 Custom Font build on ${{ github.sha }}"
 
       - name: Verify Morphe registry access
